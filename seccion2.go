@@ -17,12 +17,12 @@ func main() {
 		ch <- "Terminado ."
 	}()
 
-	fmt.Println("Vendedor: Que café desea pedir?") //1
+	fmt.Println("Vendedor: Que café desea pedir?")
 	ch2 <- "Toma un tiempo para pensar"
 	valor := <-ch
 
-	fmt.Println("Vendedor: recibido....", valor)
+	fmt.Println(valor)
 	time.Sleep(5 * time.Second)
-	ch2 <- "Cliente: Mejor un Latte !"
+	ch2 <- "Mejor un Latte !"
 	fmt.Println("Vendedor: OK, se cambia entonces :)", <-ch)
 }
