@@ -9,11 +9,6 @@ type Producto struct {
 	chA chan string
 }
 
-/*
-func (p Producto) set_chA() {
-	p.chA = make(chan string)
-}
-*/
 func (p *Producto) rutina(c *Consumidor) {
 	fmt.Println("Begin A ↓")
 	p.chA <- "Call B (corroutine) ↗"
@@ -45,7 +40,6 @@ func main() {
 	productor := new(Producto)
 	productor.chA = make(chan string)
 	consumidor.chB = make(chan string)
-	//productor.set_chA()
 
 	go productor.rutina(consumidor)
 	go consumidor.rutina(productor)
