@@ -16,13 +16,14 @@ Puede ser el ejemplo del productor y consumidor.
 Sección Nº3:
 
 Debe ejecutar el siguiente comando: go run seccion3.go
-Luego se solicitará ingresar un tiempo
+Luego se solicitará ingresar un tiempo, cantidad de cajeros y cantidad de la fila
 Para terminar la ejecución bastará con apretar la tecla Enter.
 
 Datos: 
-Una vez ingresado el comando el programa solicitará por consola ingresar el tiempo de duración en cuanto al cliente.
+Una vez ingresado el comando el programa solicitará por consola ingresar cantidad de cajeros, cantidad de la fila y tiempo de duración en cuanto al cliente.
 Es decir cuanto tiempo se demora en ingresar a la fila de la caja y salir de la caja.
 El tiempo solicitado es en base a un rango es decir de 0 a el tiempo ingresado por consola.
+Y en cuanto a la cantidad de cajeros y filas solo se le asigna el numero.
 
 Un ejemplo, si se ingresa un 10, el rango de los valores que puede tomar es del 0 al 10, 
 un cliente puede tardar en ingresar o salir ej: 1 segundo..4 segundos..o 10 segundos, es tiempo variado para cada uno.
