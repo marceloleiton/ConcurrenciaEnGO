@@ -75,13 +75,23 @@ func main() {
 	cajeros := new(Cajeros)
 	clientes := new(Clientes)
 
+	//Asignación del Cajero
+	cantidadCajero := 0
+	fmt.Printf("Ingrese cantidad de Cajeros: ")
+	fmt.Scanf("%d\n", &cantidadCajero)
+
+	//Asignación del Cajero
+	cantidadFila := 0
+	fmt.Printf("Ingrese cantidad de filas: ")
+	fmt.Scanf("%d\n", &cantidadFila)
+
 	//Asignación del campo de la estructura
-	cajeros.Cajeros = make(chan int, 3)
-	clientes.Clientes = make(chan int, 5)
+	cajeros.Cajeros = make(chan int, cantidadCajero)
+	clientes.Clientes = make(chan int, cantidadFila)
 
 	//Asignación del tiempo (utilizado para entrada y salida de clientes de forma variable)
 	tiempo := 0
-	fmt.Printf("Ingrese tiempo: ")
+	fmt.Printf("Ingrese probabilidad de tiempo: ")
 	fmt.Scanf("%d\n", &tiempo)
 
 	//Llamado mediante Gorrutina
