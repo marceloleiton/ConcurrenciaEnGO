@@ -10,7 +10,7 @@ func corrutinaB(chA chan string, chB chan string) {
 	fmt.Println("Begin B ↓")
 	fmt.Println("continue in B")
 	chB <- "Resume A ←"
-	fmt.Println(<-chA)
+	fmt.Println(<-chA) // Resume B
 	fmt.Println("continue in B")
 	chB <- "return end B"
 }
