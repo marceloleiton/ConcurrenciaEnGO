@@ -5,26 +5,31 @@ import (
 	"time"
 )
 
-type Producto struct { //se define el producto y los atributos que va a tener
+//Creación de Estructuras (colección de campos)
+
+type Producto struct {
 	chA chan string
 }
 
-func (p *Producto) rutina(c *Consumidor) { //corrutina A
-	fmt.Println("Begin A ↓")         //primer print
-	p.chA <- "Call B (corroutine) ↗" //se envia a corrutina B
+type Consumidor struct {
+	chB chan string
+}
 
-	fmt.Println(<-c.chB) //Resume A
+//Creación de Funciones y metodos
+
+//Función del Productor
+func (p *Producto) rutina(c *Consumidor) { //Metodo rutina
+	fmt.Println("Begin A ↓")
+	p.chA <- "Call B (corroutine) ↗" //se envia a corrutina B
+	fmt.Println(<-c.chB)             //Resume A
 	fmt.Println("continue in A")
 	p.chA <- "resume B"
 	fmt.Println(<-c.chB) //end B
 	fmt.Println("End A")
 }
 
-type Consumidor struct { //se define el consumidor y el atributo
-	chB chan string
-}
-
-func (c *Consumidor) rutina(p *Producto) { //corrutina B
+//Función del Consumidor
+func (c *Consumidor) rutina(p *Producto) { //Metodo rutina
 	fmt.Println(<-p.chA) //Call B (corroutine) ↗
 	fmt.Println("Begin B ↓")
 	fmt.Println("continue in B")
@@ -36,11 +41,15 @@ func (c *Consumidor) rutina(p *Producto) { //corrutina B
 
 func main() {
 
-	consumidor := new(Consumidor)      //seteamos un dato de la estructura
-	productor := new(Producto)         //seteamos un dato de la estructura
-	productor.chA = make(chan string)  //asignamos el dato
-	consumidor.chB = make(chan string) //asignamos el dato
+	//Creación
+	consumidor := new(Consumidor)
+	productor := new(Producto)
+	//Asignación del campo de la estructura
+	productor.chA = make(chan string)
+	consumidor.chB = make(chan string)
 
+	//Llamado mediante Gorrutina
+	//Acceder a los valores a través de la notación de puntos
 	go productor.rutina(consumidor)
 	go consumidor.rutina(productor)
 
