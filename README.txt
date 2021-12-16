@@ -1,21 +1,36 @@
-_Certamen 2 extendido Lenguajes de Programación II – ICI425/INC415 Profesor: Alonso Inostrosa Psijas programado en GO_
+Certamen 2 extendido Lenguajes de Programación II – ICI425/INC415 Profesor: Alonso Inostrosa Psijas programado en GO
 
-_No es necesario compilar el código solo se debera ejecutar el codigo seccion2.go, una vez iniciado el programa la concurrencia funcionara automaticamente_
 
-_Debe estar ubicado en la carpeta ConcurrenciaEnGO y luego realizar el comando go run y luego ejecutar el archivo seccion2.go_
+Sección Nº2:
 
-_Para la seccion3 no es necesario compilar el código solo se debera ejecutar el codigo seccion3.go, una vez iniciado el programa se le indicara al usuario cuanto tiempo maximo desea para entrar o salir de las cajas,
-este tiempo no necesariamente va a ser el que se va a demorar sino que tomara lam variable de tiempo y ocupara esta variable como maximo del rango,
-por ejemplo si se le indica al programa que es 10 el ingreso y salida de las cajas sera entre un rango entre 0 y 10, para terminar el programa solo debe ingresar un enter_
+Debe ejecutar el siguiente comando: go run seccion2.go
+Y se mostrará la ejecución del programa por la consola.
 
-_Debe Debe estar ubicado en la carpeta ConcurrenciaEnGO y luego realizar el comando go run y luego ejecutar el archivo seccion3.go_
+Datos: 
+Se plantea la implementación de corrutinas, mediante la implementación de estructuras, metodos, channels y gorrutinas.
+Se emplea un ejemplo en el cual se puede ver como se detienen las gorrutinas en posiciones especificas solicitando un dato.
+Puede ser el ejemplo del productor y consumidor.
 
-_Se necesita tener instalada las dependencias de GO_
 
-Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/marceloleiton/ConcurrenciaEnGO.git).
 
-## Autores ✒️
+Sección Nº3:
 
-- **Marcelo Leiton** - _Programador_ - [marceloleiton](https://github.com/marceloleiton)
-- **Mauricio Moraga** - _Programador_ - [mmogaP](https://github.com/mmogaP)
-- **Ignacio Villagran** - _Programador_ - [ignaciovillagran](https://github.com/ignaciovillagran)
+Debe ejecutar el siguiente comando: go run seccion3.go
+Luego se solicitará ingresar un tiempo
+Para terminar la ejecución bastará con apretar la tecla Enter.
+
+Datos: 
+Una vez ingresado el comando el programa solicitará por consola ingresar el tiempo de duración en cuanto al cliente.
+Es decir cuanto tiempo se demora en ingresar a la fila de la caja y salir de la caja.
+El tiempo solicitado es en base a un rango es decir de 0 a el tiempo ingresado por consola.
+
+Un ejemplo, si se ingresa un 10, el rango de los valores que puede tomar es del 0 al 10, 
+un cliente puede tardarse en ingresar o salir ej: 1 segundo..4 segundos..o 10 segundos, es tiempo variado para cada uno.
+
+
+
+Datos Extras del programa:
+
+Se necesita tener instalada las dependencias de GO
+
+Repositorio: https://github.com/marceloleiton/ConcurrenciaEnGO.git
