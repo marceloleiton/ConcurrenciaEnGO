@@ -49,7 +49,7 @@ func main() {
 	consumidor.chB = make(chan string)
 
 	//Llamado mediante Gorrutina
-	//Acceder a los valores a través de la notación de puntos
+	//Acceder a los valores a través de la notación de puntos y parámetros
 	go productor.rutina(consumidor)
 	go consumidor.rutina(productor)
 
