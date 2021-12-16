@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+
 	ch := make(chan string)
 	ch2 := make(chan string)
 
@@ -19,7 +20,7 @@ func main() {
 
 	fmt.Println("Vendedor: Que café desea pedir?")
 	ch2 <- "Toma un tiempo para pensar"
-	valor := <-ch
+	valor := <-ch //Bloqueante
 
 	fmt.Println(valor)
 	time.Sleep(5 * time.Second)
